@@ -1,0 +1,44 @@
+CREATE TABLE transaksi(
+  id_transaksi VARCHAR(6) UNIQUE NOT NULL,
+  id_user VARCHAR (6),
+  id_order VARCHAR (6),
+  tanggal date,
+  total_bayar int
+); 
+
+CREATE TABLE pengguna(
+  id_user VARCHAR(6) UNIQUE NOT NULL,
+  username VARCHAR (100),
+  pass VARCHAR (100),
+  nama_user VARCHAR (100),
+  id_level VARCHAR (100)
+);
+
+CREATE TABLE orderan(
+  id_order VARCHAR(6) UNIQUE NOT NULL,
+  no_meja int,
+  tanggal date,
+  id_user VARCHAR (6),
+  keterangan VARCHAR (50),
+  status_order VARCHAR (50)
+);
+
+CREATE TABLE lepel(
+  id_level VARCHAR (6) UNIQUE NOT NULL,
+  nama_level VARCHAR (50)
+); 
+
+CREATE TABLE detail_order(
+  id_detail_order VARCHAR (6) UNIQUE NOT NULL,
+  id_order VARCHAR (6),
+  id_masakan VARCHAR (6),
+  keterangan VARCHAR (50),
+  status_detail_order VARCHAR (50)
+); 
+
+CREATE TABLE masakan(
+  id_masakan VARCHAR (6) UNIQUE NOT NULL,
+  nama_masakan VARCHAR (100),
+  harga int,
+  status_masakan VARCHAR (50)
+); 
